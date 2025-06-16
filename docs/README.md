@@ -6,5 +6,6 @@ This tutorial guides you through the process of building and using [Postman Flow
 
 In order to follow the tutorial you will need the following:
 
-- [Postman](https://www.postman.com), incl. the ability to create flows and run them locally (for more details about monthly limits and pricing related to Postman Flows, see https://learning.postman.com/docs/billing/flows-usage/)
+- [Postman](https://www.postman.com), incl. the ability to create flows and run them locally
+    - For more details about usage limits and pricing, see https://learning.postman.com/docs/billing/flows-usage/
 - Existing [APS application](https://get-started.aps.autodesk.com/#create-an-account)

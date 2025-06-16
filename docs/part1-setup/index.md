@@ -4,7 +4,7 @@ In this part of the tutorial we will prepare a collection of requests for the [O
 
 ## Import collection
 
-Let's start by creating the collection of API requests we can later use when building Postman flows. We could build the requests by hand if we wanted to, however since there are now [official OpenAPI specifications](https://github.com/autodesk-platform-services/aps-sdk-openapi) available for many APIs in Autodesk Platform Services, including OSS, we can _import_ these specs into Postman instead, and have it auto-generate all the requests for us.
+Let's start by creating a collection of API requests we can later use when building Postman flows. We could build the requests by hand if we wanted to, however since there are now [official OpenAPI specifications](https://github.com/autodesk-platform-services/aps-sdk-openapi) available for many APIs in Autodesk Platform Services, including OSS, we can _import_ these specs into Postman instead.
 
 - Open Postman
 - In the left sidebar, switch to **Collections**, and click **Import**
@@ -70,7 +70,14 @@ Next we'll setup a Postman _environment_ with our application's credentials. By 
 
 ## Setup authorization
 
-With our application credentials defined in the environment, we can now setup the authorization for our API requests. In Postman, authorization can be defined at different levels - for individual requests, per-folder, or per-collection. In our case we will setup [2-Legged OAuth](https://aps.autodesk.com/en/docs/oauth/v2/tutorials/get-2-legged-token/) for the entire **Object Storage Service** collection.
+With our application credentials defined in the environment, we can now setup the authorization for our API requests.
+
+> Note: In Postman, authorization can be defined at different levels:
+> - for individual requests
+> - per-folder
+> - per-collection
+>
+> In our case we will setup [2-Legged (aka Client Credentials) OAuth](https://aps.autodesk.com/en/docs/oauth/v2/tutorials/get-2-legged-token/) for the entire **Object Storage Service** collection.
 
 - In the left sidebar, switch back to **Collections**, and select the **Object Storage Service** collection
 - In the collection page, switch to the **Authorization** tab
@@ -123,7 +130,7 @@ Now that we have the authorization configured for all our OSS API requests, let'
 }
 ```
 
-> Note that the bucket key must be globally unique, and it also needs to satisfy additional requirements:
+> Note: Bucket key must be globally unique, and it also needs to satisfy additional requirements:
 > - length between 3 and 128 characters
 > - only using the following characters: `-_.a-z0-9`
 
@@ -135,7 +142,7 @@ Now that we have the authorization configured for all our OSS API requests, let'
 - Click the **Save** icon in the top-right to save the request
 - Click the **Send** button next to the URL, and you should see a `200 OK` response with a JSON payload
 
-> Note: if you get a `409 Conflict` error, the bucket name already exists; in that case update the `bucketKey` in the request payload to another unique name, and try again
+> Note: If you get a `409 Conflict` error, the bucket name is already by another APS application; in that case update the `bucketKey` in the request payload to another unique name, and try again.
 
 ![Create bucket: example response](images/test-create-bucket-response.png)
 
@@ -149,11 +156,11 @@ Now that we have the authorization configured for all our OSS API requests, let'
 ### Upload file
 
 - In the **Object Storage Service** collection in the sidebar, expand the **Objects** folder, and select the **POST Generate OSS Signed URL** request
-- In the request page, switch to the **Params** tab
+- In the request page, make sure you're looking at the **Params** tab
 
 ![Create signed URL: request details](images/test-create-signed-url-request.png)
 
-- Under **Query Params**, enable the **access** parameter by checking the checkbox next to it
+- Under **Query Params**, enable the **access** parameter by checking the checkbox next to it, and set its value to `ReadWrite`
 - Under **Path Variables**, change the value of the **objectKey** to `test.rvt`, and **bucketKey** to `{{bucketKey}}`
 - The `{{bucketKey}}` value will initially be colored in red because we've defined a variable (`bucketKey`) that has not been defined yet
 - Hover over the `{{bucketKey}}` value, and a popup will appear, allowing you to specify the value and scope of the variable
@@ -179,15 +186,13 @@ Now that we have the authorization configured for all our OSS API requests, let'
 - Switch to the **Body** tab to configure the request payload
 - Change the payload type to **binary**, and click the **Select file** input to load a design file from your file system
 
-> Tip: you can find official Revit sample designs here: https://help.autodesk.com/view/RVT/2024/ENU/?guid=GUID-61EF2F22-3A1F-4317-B925-1E85F138BE88
+> Tip: You can find official Revit sample designs here: https://help.autodesk.com/view/RVT/2024/ENU/?guid=GUID-61EF2F22-3A1F-4317-B925-1E85F138BE88.
 
 ![Upload file test: request details](images/test-upload-file-request.png)
 
 - Click the **Send** button next to the URL, and you should see a `200 OK` response with details about the new object in OSS
 
 ![Upload file test: example response](images/test-upload-file-response.png)
-
-Your design file has now been uploaded to the OSS bucket.
 
 ### List objects
 
