@@ -14,7 +14,7 @@ Let's start by creating a collection of API requests we can later use when build
 - In the popup dialog, paste the URL to the OpenAPI specification of the OSS API:
 
 ```
-https://raw.githubusercontent.com/autodesk-platform-services/aps-sdk-openapi/refs/heads/main/oss/oss.yaml
+https://raw.githubusercontent.com/autodesk-platform-services/aps-sdk-openapi/09dfeb71fab0daf032cf1b343ef3dcac8ba1800c/oss/oss.yaml
 ```
 
 - In the **Choose how to import your Specification** dialog, keep **Postman Collection** selected, and click **View Import Settings**
