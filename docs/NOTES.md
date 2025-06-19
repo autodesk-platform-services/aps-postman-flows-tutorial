@@ -1,0 +1,1 @@
+- consider adding a section on [creating a new Postman workspace](https://learning.postman.com/docs/collaborating-in-postman/using-workspaces/create-workspaces/)

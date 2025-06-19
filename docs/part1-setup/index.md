@@ -36,7 +36,7 @@ https://raw.githubusercontent.com/autodesk-platform-services/aps-sdk-openapi/09d
 ![Leave import settings](images/import-collection-3.png)
 
 - Back in the **Choose how to import your Specification** dialog, click **Import** to generate the request collection in Postman
-- After the collection has been imported, select it in the sidebar
+- After the import is done, you should see a new collection in the sidebar called **oss**; click on it to open the collection details page
 - In the collection page, click on the **oss** title, and change it to `Object Storage Service`
 
 ![Change collection title](images/change-collection-title.png)
