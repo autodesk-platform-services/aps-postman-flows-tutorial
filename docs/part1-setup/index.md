@@ -172,6 +172,13 @@ Now that we have the authorization configured for all our OSS API requests, let'
 - Make sure the payload type is set to **raw** and **JSON**
 - Set the **Request Body** simply to `{}` as we don't need to customize any of the additional parameters
 
+> Note: Here's the parameters you can specify in the request body JSON:
+>
+> - **minutesExpiration** (optional) - expiration time in minutes (default: 60 minutes)
+> - **singleUse** (optional) - **true** if the URL should expire after it is used the first time (default: **false**)
+>
+> For more details, see the [API endpoint documentation](https://aps.autodesk.com/en/docs/data/v2/reference/http/buckets-:bucketKey-objects-:objectKey-signed-POST/).
+
 ![Create signed URL: configure request payload](images/test-create-signed-url-body.png)
 
 - Click the **Send** button next to the URL, and you should see a `200 OK` response with a JSON payload, including a `signedUrl` field; copy the value of this field (we will need it in the next step)
