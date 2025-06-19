@@ -1,6 +1,6 @@
 # Part 1: Setup
 
-In this part of the tutorial we will prepare a collection of requests for the [OSS (Object Storage Service) API](https://aps.autodesk.com/en/docs/data/v2/developers_guide/basics/#object-storage-service-oss), setup the authorization, and test some of the requests.
+In this part of the tutorial we will prepare a collection of requests for the [OSS API](https://aps.autodesk.com/en/docs/data/v2/developers_guide/basics/#object-storage-service-oss), setup the authorization, and test some of the requests.
 
 ## Import collection
 

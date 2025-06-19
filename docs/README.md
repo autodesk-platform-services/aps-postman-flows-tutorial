@@ -1,6 +1,8 @@
 # Tutorial
 
-This tutorial guides you through the process of building and using [Postman Flows](https://www.postman.com/product/flows/) with Autodesk Platform Services APIs.
+This tutorial guides you through the process of building and using [Postman Flows](https://www.postman.com/product/flows/) with Autodesk Platform Services APIs. By the end of the tutorial, you'll have a fully functioning flow that outputs a bar chart with the total storage usage of your individual buckets in the [OSS (Object Storage Service) API](https://aps.autodesk.com/en/docs/data/v2/developers_guide/basics/#object-storage-service-oss).
+
+![Complete Postman Flow](screenshot.png)
 
 ## Prerequisites
 
