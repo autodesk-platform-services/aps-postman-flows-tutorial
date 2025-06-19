@@ -24,6 +24,7 @@ Let's create a helper API request in the **Object Storage Service** collection t
 
 - Name the request `Get Next Page`, and set the endpoint to `{{nextPageUrl}}`
 - The `{{nextPageUrl}}` value will turn red, indicating that the `nextPageUrl` has not been defined yet; click the value, open the **Add to** dropdown, and select **Collection**
+- Save the request
 
 > Note: The reason we use a variable here is because variables appear as inputs for the request in Postman Flows.
 
