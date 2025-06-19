@@ -58,7 +58,9 @@ Let's create a helper API request in the **Object Storage Service** collection t
 > Note: **Select** blocks are used to extract specific information from API responses.
 
 - In the created **Select** block, click **Enter path...**, and specify the field this block should extract from the **List Buckets** response; you can either type in `body.items` manually, or (since we already ran our flow, and it remembers the last response) expand the response, and click on the `items` field there
-- Another way to create **Select** blocks is by dragging the field names directly from output previews; in the **List Buckets** block, click the **Success** output to preview the JSON response, and in the preview window, grab the **next** field, and drag it outside the block
+- Create another **Select** block coming out of the **List Buckets** block like in the previous step, and this time, set the path to `body.next`
+
+> Note: Another quick way to create **Select** blocks is by dragging the field names directly from _output previews_. In the video below, I click the **Success** output to preview the JSON response, and I can see that the JSON includes the **next** field (because I have more than 10 buckets). I can simply grab this field, and drag it outside the block.
 
 [Pick outputs from list buckets request](images/list-buckets-pick-outputs.mp4 ':include :type=video controls width=100%')
 
